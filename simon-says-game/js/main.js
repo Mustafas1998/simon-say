@@ -40,4 +40,81 @@ function Play(){
     intervalID =setInterval(gameTurn, 800);
 }
 
+function Play(){
+    win = false;
+    order = [];
+    player_order = [];
+    flash = 0;
+    intervalID = 0;
+    turn = 1;
+    play.innerHTML = 1;
+    good = true;
+    for(var i = 0; i<12; i++){
+        order.push(Math.floor(Math.random()*4)+1);
+    }
+    computer_turn = true;
+    intervalID =setInterval(gameTurn, 800);
+}
+
+play.addEventListener('click',(event) =>{
+    if(on || win)
+    {
+        Play();
+    }
+})
+
+
+
+function game(){
+    on = false;
+    if(flash == turn){
+        clearInterval(intervalID);
+        computer_turn = false;
+        on = true;
+    }
+}   if (computer_turn){
+    clearCOLOR();
+    setTimeout(() => {
+        if(order[flash] == 1) one();
+        if(order[flash] == 2) two();
+        if(order[flash] == 3) three();
+        if(order[flash] == 4) four();
+        flash++;
+    }, 200);
+}
+
+function one(){
+    if (sound){
+        const test = new Audio("url");
+        test.play()
+    }
+    sound = true;
+    green.style.backgroundColor = 'lightgreen';
+}
+function two(){
+    if (sound){
+        const test = new Audio("url");
+        test.play()
+    }
+    sound = true;
+    red.style.backgroundColor = 'tomato';
+}
+function three(){
+    if (sound){
+        const test = new Audio("url");
+        test.play()
+    }
+    sound = true;
+    yellow.style.backgroundColor = 'yellow';
+}
+function four(){
+    if (sound){
+        const test = new Audio("url");
+        test.play()
+    }
+    sound = true;
+    blue.style.backgroundColor = 'lightskyblue';
+}
+
+
 
