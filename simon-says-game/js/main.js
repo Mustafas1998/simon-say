@@ -40,31 +40,6 @@ function Play(){
     intervalID =setInterval(gameTurn, 800);
 }
 
-function Play(){
-    win = false;
-    order = [];
-    player_order = [];
-    flash = 0;
-    intervalID = 0;
-    turn = 1;
-    play.innerHTML = 1;
-    good = true;
-    for(var i = 0; i<12; i++){
-        order.push(Math.floor(Math.random()*4)+1);
-    }
-    computer_turn = true;
-    intervalID =setInterval(gameTurn, 800);
-}
-
-play.addEventListener('click',(event) =>{
-    if(on || win)
-    {
-        Play();
-    }
-})
-
-
-
 function game(){
     on = false;
     if(flash == turn){
@@ -115,6 +90,22 @@ function four(){
     sound = true;
     blue.style.backgroundColor = 'lightskyblue';
 }
+
+function clearCOLOR(){
+    green.style.backgroundColor = 'darkgreen';
+    red.style.backgroundColor = 'darkred';
+    yellow.style.backgroundColor = 'goldenrod';
+    blue.style.backgroundColor = 'darkblue';
+}
+function flashCOLOR(){
+    green.style.backgroundColor = 'lightgreen';
+    red.style.backgroundColor = 'tomato';
+    yellow.style.backgroundColor = 'yello';
+    blue.style.backgroundColor = 'lighskyblue';
+}
+
+
+
 
 
 
