@@ -104,6 +104,56 @@ function flashCOLOR(){
     blue.style.backgroundColor = 'lighskyblue';
 }
 
+green.addEventListener('click', function() {
+    if (on){
+        player_order.push(1)
+        check();
+        one();
+        if(!win){
+            setTimeout(() =>{
+                clearCOLOR();
+            }, 300);
+        }
+    }
+})
+
+red.addEventListener('click', function(){
+    if (on){
+        player_order.push(2)
+        check();
+        two();
+        if(!win){
+            setTimeout(() =>{
+                clearCOLOR();
+            }, 300);
+        }
+    }
+})
+yellow.addEventListener('click',function(){
+    if (on){
+        player_order.push(3)
+        check();
+        three();
+        if(!win){
+            setTimeout(() =>{
+                clearCOLOR();
+            }, 300);
+        }
+    }
+})
+
+blue.addEventListener('click',function(){
+    if (on){
+        player_order.push(4)
+        check();
+        four();
+        if(!win){
+            setTimeout(() =>{
+                clearCOLOR();
+            }, 300);
+        }
+    }
+})
 
 
 
