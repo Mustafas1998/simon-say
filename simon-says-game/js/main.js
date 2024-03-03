@@ -155,6 +155,45 @@ blue.addEventListener('click',function(){
     }
 })
 
+function check(){
+    if(player_order[player_order-1] !== order[player_order.length -1 ]) 
+    good=false;
+
+    if(player_order.length == 12 && good){
+        wingame();
+    }
+    if(good==false){
+        flashCOLOR();
+        play.innerHTML = "NO!"
+        setTimeout(()=>{
+            play.innerHTML = turn;
+            clearCOLOR();
+        }, 800);
+        sound =false;
+    }
+
+    if (turn == player_order.length && good && !win){
+        turn++;
+        player_order=[];
+        computer_turn=true
+        flash = 0;
+        play.innerHTML =turn;
+        intervalID = setInterval(gameTurn,800);
+    }
+}
+
+function flashCOLOR(){
+
+}
+
+function wingame(){
+    flashCOLOR();
+    play.innerHTML = "win!"
+    on=false;
+    win=true;
+
+}
+
 
 
 
